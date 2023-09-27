@@ -1,6 +1,8 @@
 # Databricks notebook source
 # MAGIC %md
 # MAGIC # Gerando Token
+# MAGIC
+# MAGIC [Link - Vídeo de referência de como foi feito](https://www.youtube.com/watch?v=APj3MFt2w5I/)
 
 # COMMAND ----------
 
@@ -51,6 +53,7 @@ headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json
 
 # MAGIC %md
 # MAGIC ### List - Groups
+# MAGIC [Doc Link](https://learn.microsoft.com/pt-br/rest/api/power-bi/groups/get-groups#code-try-0)
 
 # COMMAND ----------
 
@@ -65,6 +68,8 @@ if response.ok:
 
 # MAGIC %md
 # MAGIC ### List - Groups Users
+# MAGIC
+# MAGIC [Doc Link](https://learn.microsoft.com/pt-br/rest/api/power-bi/groups/get-group-users)
 
 # COMMAND ----------
 
@@ -164,6 +169,7 @@ if response.ok:
 
 # MAGIC %md
 # MAGIC ### List - Dataset From Group
+# MAGIC [Doc API](https://learn.microsoft.com/pt-br/rest/api/power-bi/datasets/get-datasets-in-group)
 
 # COMMAND ----------
 
@@ -214,6 +220,7 @@ if response.ok:
 
 # MAGIC %md
 # MAGIC ### List -  Refresh History In Group
+# MAGIC [Doc API](https://learn.microsoft.com/pt-br/rest/api/power-bi/datasets/get-refresh-history-in-group)
 
 # COMMAND ----------
 
@@ -231,6 +238,8 @@ if response.ok:
 
 # MAGIC %md
 # MAGIC ### List - Dataset Users In Group
+# MAGIC
+# MAGIC [Doc API](https://learn.microsoft.com/pt-br/rest/api/power-bi/datasets/get-dataset-users-in-group)
 
 # COMMAND ----------
 
@@ -248,8 +257,7 @@ if response.ok:
 # MAGIC %md
 # MAGIC ### Post - Refresh Dataset In Group
 # MAGIC
-# MAGIC
-# MAGIC **Descrição**: 
+# MAGIC [Doc API](https://learn.microsoft.com/pt-br/rest/api/power-bi/datasets/refresh-dataset-in-group)
 
 # COMMAND ----------
 
