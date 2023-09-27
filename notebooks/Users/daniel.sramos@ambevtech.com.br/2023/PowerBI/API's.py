@@ -20,8 +20,8 @@ import msal
 
 # COMMAND ----------
 
-tenant_id = "cef04b19-7776-4a94-b89b-375c77a8f936"
-application_id = "b31e4f89-10f1-4e5a-bc5a-a4e152d32514"
+tenant_id = [redact]
+application_id = [redact]
 username = dbutils.secrets.get("keyvault", "PeoplePowerBIEmailUser")
 password = dbutils.secrets.get("keyvault", "PeoplePowerBIPassword")
 
@@ -73,7 +73,7 @@ if response.ok:
 
 # COMMAND ----------
 
-group_id = "5bcd35cf-5db3-43a7-b782-a8626e535043"  # id do grupo: People Analytics - Saúde e Segurança
+group_id = "..."
 endpoint = f"https://api.powerbi.com/v1.0/myorg/groups/{group_id}/users"
 response = requests.get(endpoint, headers=headers)
 
@@ -133,7 +133,7 @@ if response.ok:
 
 # COMMAND ----------
 
-dataflow_id = "607e177a-59ef-4d58-9615-c828b8e9c4ad"
+dataflow_id = "..."
 endpoint = f"https://api.powerbi.com/v1.0/myorg/groups/{group_id}/dataflows/{dataflow_id}/transactions"
 response = requests.get(endpoint, headers=headers)
 
@@ -225,7 +225,7 @@ if response.ok:
 # COMMAND ----------
 
 dataset_id = (
-    "82e3f38f-7e5b-4292-adfc-34b367745c1b"  # id do dataset: Usage Metrics Report
+    "..."
 )
 endpoint = f"https://api.powerbi.com/v1.0/myorg/groups/{group_id}/datasets/{dataset_id}/refreshes"
 response = requests.get(endpoint, headers=headers)
