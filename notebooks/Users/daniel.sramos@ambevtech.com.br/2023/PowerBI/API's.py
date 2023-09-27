@@ -245,29 +245,6 @@ if response.ok:
 
 # COMMAND ----------
 
-endpoint = f"https://api.powerbi.com/v1.0/myorg/groups/{group_id}/datasets/{dataset_id}/refreshSchedule"
-response = requests.get(endpoint, headers=headers)
-
-if response.ok:
-    response_ok = response.json()
-    response_ok["odata_context"] = response_ok["@odata.context"]
-    response_ok["days"] = list(response_ok["days"])
-    response_ok["times"] = list(response_ok["times"])
-    response_ok.pop("@odata.context")
-    schema = StructType(
-        [
-            StructField("days", ArrayType(StringType()), True),
-            StructField("times", ArrayType(StringType()), True),
-            StructField("enabled", BooleanType(), True),
-            StructField("localTimeZoneId", StringType(), True),
-            StructField("notifyOption", StringType(), True),
-            StructField("odata_context", StringType(), True),
-        ]
-    )
-    spark.createDataFrame(response_ok, schema).display()
-
-# COMMAND ----------
-
 # MAGIC %md
 # MAGIC ### Post - Refresh Dataset In Group
 # MAGIC
